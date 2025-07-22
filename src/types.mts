@@ -251,6 +251,14 @@ export interface InfoObject {
   license?: any;
 }
 
+export interface UseInfiniteQuery{
+  keys: string[];
+  keepUseQuery?: boolean ;
+}
+
+type UseInfiniteQueryArray = string | UseInfiniteQuery;
+
+
 export interface FileConfig {
   url?: string | { branch: string; url: string }[];
   dir: string;
@@ -266,7 +274,7 @@ export interface FileConfig {
   includes?: string[];
   excludes?: string[];
   useQuery?: string[];
-  useInfiniteQuery?: string[];
+  useInfiniteQuery?: Array<UseInfiniteQueryArray>;
   mock?: string;
   prettierPath?: string;
   language?: "javascript" | "typescript" | "kotlin";
